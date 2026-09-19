@@ -1,23 +1,42 @@
 .text
 .globl main
 main:
-# Setup registers
-li x22, 0            # i = 0
-li x24, 5            # k = 5
-li x25, 0x1000       # base address of save array
+    li x1, 1           # case1 selector
+    li x2, 2           # case2 selector
+    li x3, 3           # case3 selector
+    li x4, 4           # case4 selector
 
-# Example array in memory (conceptual layout):
-# Address   Value
-# 0x1000    5   (save[0])
-# 0x1004    5   (save[1])
-# 0x1008    7   (save[2])
-# 0x100C    9   (save[3])
+    li x22, 2          # x (switch variable)
+    li x23, 5          # b = 5
+    li x24, 3          # c = 3
+    li x25, 0          # a = 0
 
-Loop:  slli x10, x22, 2       # x10 = i * 4
-       add  x10, x10, x25     # x10 = address of save[i]
-       ld   x9, 0(x10)        # x9 = save[i]
-       bne  x9, x24, Exit     # exit if save[i] != k
-       addi x22, x22, 1       # i = i + 1
-       beq  x0, x0, Loop      # unconditional jump back to Loop
-Exit:
-       j Exit
+    beq x22, x1, case1
+    beq x22, x2, case2
+
+    beq x22, x3, case3
+    beq x22, x4, case4
+    j default
+
+case1:
+    add x25, x23, x24  # a = b + c
+    j end
+
+case2:
+    sub x25, x23, x24  # a = b - c
+    j end
+
+case3:
+    mul x25, x23, x24  # a = b * c
+    j end
+
+case4:
+    div x25, x23, x24  # a = b / c
+    j end
+
+default:
+    li x25, 0          # a = 0
+    j end
+
+end:
+    j end              # halt
