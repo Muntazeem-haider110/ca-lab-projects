@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Sep 30 11:56:36 2026
+# Process ID: 9568
+# Current directory: D:/computer architecture/project_2/project_2.runs/synth_1
+# Command line: vivado.exe -log top_fsm_system.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_fsm_system.tcl
+# Log file: D:/computer architecture/project_2/project_2.runs/synth_1/top_fsm_system.vds
+# Journal file: D:/computer architecture/project_2/project_2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top_fsm_system.tcl -notrace

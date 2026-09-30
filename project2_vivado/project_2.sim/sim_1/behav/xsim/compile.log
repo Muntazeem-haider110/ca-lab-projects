@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/clock_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_decrement
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/computer architecture/project_2/project_2.srcs/sim_1/new/clock_decrement_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_decrement_tb
